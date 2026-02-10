@@ -37,7 +37,7 @@ const Services = () => {
     const bottomRow = services.slice(4);
 
     return (
-        <section className="px-4 py-6">
+        <section className="px-4 py-10">
             <div className="mx-auto max-w-6xl">
                 <h2 className="mb-12 text-center text-5xl">
                     Our Services

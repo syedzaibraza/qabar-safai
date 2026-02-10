@@ -1,3 +1,4 @@
+import Packages from "@/components/home/packages";
 import Services from "@/components/home/services";
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
       </section>
 
       <Services />
+      <Packages />
     </div>
   );
 }
