@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Card from "../card";
+import CustomizeCard from "../customize-card";
 import { Package } from "@/utils/types";
 
 
@@ -67,9 +68,13 @@ const Packages = () => {
                     </button>
                 </div>
                 <div className="mt-10 flex items-center justify-center gap-4">
-                    {packages.map((p) => (
-                        <Card key={p.name} item={p} />
-                    ))}
+                    {selected === "choose" ? (
+                        packages.map((p) => (
+                            <Card key={p.name} item={p} />
+                        ))
+                    ) : (
+                        <CustomizeCard />
+                    )}
                 </div>
             </div>
         </section>

@@ -26,6 +26,22 @@ const Card = ({ item }: CardProps) => {
                 <h1 className="text-4xl font-semibold">
                     ${price}
                 </h1>
+                {isPopular && (
+
+                    <div className="flex items-center justify-center gap-2 mt-2">
+                        <p className="text-sm font-bold">Monthly</p>
+                        <div className="group relative inline-flex w-11 shrink-0 rounded-full bg-gray-200 p-0.5 outline-offset-2 outline-primary ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out has-[:checked]:bg-primary has-[:focus-visible]:outline has-[:focus-visible]:outline-2">
+                            <span className="size-5 rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-[:checked]:translate-x-5" />
+                            <input
+                                name="setting"
+                                type="checkbox"
+                                aria-label="Use setting"
+                                className="absolute inset-0 size-full appearance-none focus:outline-none"
+                            />
+                        </div>
+                        <p className="text-sm font-bold">Annually</p>
+                    </div>
+                )}
             </div>
 
             <div className="flex flex-col justify-start w-full mb-6 space-y-2">
