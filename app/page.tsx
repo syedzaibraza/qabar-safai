@@ -1,4 +1,3 @@
-import Locator from "@/components/home/locator";
 import Packages from "@/components/home/packages";
 import ResentWork from "@/components/home/resentWork";
 import Services from "@/components/home/services";
@@ -34,7 +33,6 @@ export default function Home() {
 
       <Services />
       <Packages />
-      {/* <Locator /> */}
       <ResentWork />
     </div>
   );
