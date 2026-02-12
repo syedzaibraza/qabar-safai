@@ -32,7 +32,9 @@ export default function Home() {
             Honor their memory with our professional grave care services
           </p>
           <div />
-          <Link href="#" className="px-8 py-3 bg-stone-100 rounded-2xl text-primary text-2xl font-bold cursor-pointer">Book our services</Link>
+          <div className="mt-11">
+            <Link href="#" className="capitalize px-8 py-3 bg-stone-100 rounded-2xl text-primary text-2xl font-bold cursor-pointer">Book our services</Link>
+          </div>
         </div>
       </section>
 

@@ -15,16 +15,11 @@ const Header = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex justify-center items-center gap-6">
+        <nav className="hidden md:flex justify-center items-center gap-10">
           <Link href="/" className="text-2xl font-semibold hover:text-primary">
             Home
           </Link>
-          {/* <Link
-            href="/about"
-            className="text-2xl font-semibold hover:text-primary"
-          >
-            About Us
-          </Link> */}
+
           <Link
             href="/services"
             className="text-2xl font-semibold hover:text-primary"

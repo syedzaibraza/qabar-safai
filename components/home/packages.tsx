@@ -8,6 +8,7 @@ import { Package } from "@/utils/types";
 
 const Packages = () => {
     const [selected, setSelected] = useState<"choose" | "custom">("choose");
+    const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annually">("monthly");
     const packages: Package[] = [
         {
             name: "Basic",
@@ -38,6 +39,11 @@ const Packages = () => {
         },
     ];
 
+    // Calculate price based on billing period (annual = monthly * 10 for 2 months discount)
+    const getPrice = (monthlyPrice: number) => {
+        return billingPeriod === "annually" ? monthlyPrice * 10 : monthlyPrice;
+    };
+
     return (
         <section className='bg-[#E9E9E9] text-center px-4 py-14'>
             <div className=" lg:max-w-4xl xl:max-w-7xl 2xl:max-w-360 mx-auto">
@@ -67,10 +73,17 @@ const Packages = () => {
                         Customize Package
                     </button>
                 </div>
+
                 <div className="mt-10 flex items-center justify-center gap-4">
                     {selected === "choose" ? (
                         packages.map((p) => (
-                            <Card key={p.name} item={p} />
+                            <Card
+                                key={p.name}
+                                item={p}
+                                billingPeriod={billingPeriod}
+                                onBillingPeriodChange={setBillingPeriod}
+                                displayPrice={p.isPopular ? getPrice(p.price) : p.price}
+                            />
                         ))
                     ) : (
                         <CustomizeCard />

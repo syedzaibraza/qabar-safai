@@ -44,19 +44,19 @@ const testimonials: Testimonial[] = [
 const Testimonials = () => {
     return (
         <section className="bg-[#E6E9EC] px-4 py-14">
-            <div className="lg:max-w-4xl xl:max-w-7xl 2xl:max-w-360 mx-auto">
+            <div className="lg:max-w-4xl xl:max-w-7xl 2xl:max-w-360 mx-auto flex flex-col items-center">
                 {/* Title and Subtitle */}
                 <div className="text-center mb-10">
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#6B808F] mb-3">
+                    <h2 className="text-4xl md:text-7xl font-semibold text-[#6B808F]">
                         Clients Testimonials
                     </h2>
-                    <p className="text-lg md:text-xl text-[#6B808F] font-semibold">
+                    <p className="text-lg md:text-xl text-[#6B808F] font-bold">
                         Hear what our clients say about our services
                     </p>
                 </div>
 
                 {/* Testimonial Carousel */}
-                <div className="relative">
+                <div className="relative max-w-5xl">
                     <Swiper
                         modules={[Navigation, Pagination]}
                         spaceBetween={30}
@@ -75,7 +75,7 @@ const Testimonials = () => {
                     >
                         {testimonials.map((testimonial, index) => (
                             <SwiperSlide key={index}>
-                                <div className="max-w-5xl mx-auto bg-[#F8F8F5] rounded-2xl text-center border border-[#A9BCC7] p-6 md:p-10">
+                                <div className="h-96 bg-[#F8F8F5] rounded-2xl text-center border border-[#A9BCC7] p-6 md:p-10">
                                     <h3 className="text-2xl xl:text-4xl font-semibold text-primary text-center mb-1">
                                         {testimonial.name}
                                     </h3>
@@ -107,36 +107,21 @@ const Testimonials = () => {
 
                     {/* Custom Navigation Arrows */}
                     <button
-                        className="swiper-button-prev-custom absolute left-0 md:-left-12 top-1/2 -translate-y-1/2 z-10 text-[#6B808F] hover:text-[#5a6f7e] transition-colors"
+                        className="swiper-button-prev-custom cursor-pointer absolute md:-left-20 top-1/2 -translate-y-1/2 z-10 text-[#6B808F] hover:text-[#5a6f7e] transition-colors"
                         aria-label="Previous testimonial"
                     >
-                        <svg
-                            className="w-6 h-6 md:w-8 md:h-8"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path d="M15 19l-7-7 7-7"></path>
+                        <svg width="25" height="81" viewBox="0 0 39 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M35.9014 1.91748L3.90137 40.4175L35.9014 78.9175" stroke="#607F90" stroke-width="6" />
                         </svg>
+
                     </button>
 
                     <button
-                        className="swiper-button-next-custom absolute right-0 md:-right-12 top-1/2 -translate-y-1/2 z-10 text-[#6B808F] hover:text-[#5a6f7e] transition-colors"
+                        className="swiper-button-next-custom cursor-pointer absolute md:-right-20 top-1/2 -translate-y-1/2 z-10 text-[#6B808F] hover:text-[#5a6f7e] transition-colors"
                         aria-label="Next testimonial"
                     >
-                        <svg
-                            className="w-6 h-6 md:w-8 md:h-8"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path d="M9 5l7 7-7 7"></path>
+                        <svg width="25" height="81" viewBox="0 0 39 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.30664 1.91748L34.3066 40.4175L2.30664 78.9175" stroke="#607F90" stroke-width="6" />
                         </svg>
                     </button>
                 </div>
@@ -144,55 +129,6 @@ const Testimonials = () => {
                 {/* Custom Pagination Dots - Separate below the slide */}
                 <div className="swiper-pagination-custom mt-8"></div>
             </div>
-
-            <style jsx global>{`
-                .swiper-pagination-custom {
-                    position: relative !important;
-                    bottom: -20px !important;
-                    left: auto !important;
-                    transform: none !important;
-                    width: 100% !important;
-                    display: flex !important;
-                    justify-content: center !important;
-                    align-items: center !important;
-                    gap: 8px !important;
-                    margin-top: 0 !important;
-                    padding-top: 0 !important;
-                    z-index: 10 !important;
-                }
-
-                .swiper-pagination-bullet-custom {
-                    width: 8px !important;
-                    height: 8px !important;
-                    background: #A9BCC7 !important;
-                    opacity: 1 !important;
-                    border-radius: 50% !important;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                    margin: 0 !important;
-                    display: inline-block !important;
-                }
-
-                .swiper-pagination-bullet-active-custom {
-                    background: #6B808F !important;
-                    width: 8px !important;
-                    height: 8px !important;
-                }
-
-                .swiper-button-prev-custom.swiper-button-disabled,
-                .swiper-button-next-custom.swiper-button-disabled {
-                    opacity: 0.35;
-                    cursor: auto;
-                    pointer-events: none;
-                }
-
-                @media (max-width: 768px) {
-                    .swiper-button-prev-custom,
-                    .swiper-button-next-custom {
-                        display: none;
-                    }
-                }
-            `}</style>
         </section>
     );
 };
