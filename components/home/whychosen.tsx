@@ -20,7 +20,7 @@ const WhyChosen = () => {
         }, {
             title: "100%",
             description: "Satisfaction",
-            icon: "/icons/badge.png"
+            icon: "/icons/badge.svg"
         }
     ]
 
@@ -70,7 +70,7 @@ const WhyChosen = () => {
                     ))}
                 </div>
                 <div className='bg-white p-16 rounded-4xl mt-10 flex justify-center items-center gap-10 text-primary'>
-                    <div className='rounded-4xl overflow-hidden w-1/2 max-h-[534px]'>
+                    <div className='rounded-4xl overflow-hidden w-1/2 max-h-133.5'>
                         <ReactCompareImage
                             leftImage="/work/before-1.png"
                             rightImage="/work/after-1.png"

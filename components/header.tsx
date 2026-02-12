@@ -55,19 +55,19 @@ const Header = () => {
       </div>
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden flex flex-col gap-[6px]"
+        className="md:hidden flex flex-col gap-1.5"
         onClick={() => setOpen(!open)}
       >
         <span
-          className={`h-[3px] w-6 bg-black transition-all ${open ? "rotate-45 translate-y-[8px]" : ""
+          className={`h-0.75 w-6 bg-black transition-all ${open ? "rotate-45 translate-y-2" : ""
             }`}
         ></span>
         <span
-          className={`h-[3px] w-6 bg-black transition-all ${open ? "opacity-0" : ""
+          className={`h-0.75 w-6 bg-black transition-all ${open ? "opacity-0" : ""
             }`}
         ></span>
         <span
-          className={`h-[3px] w-6 bg-black transition-all ${open ? "-rotate-45 -translate-y-[8px]" : ""
+          className={`h-0.75 w-6 bg-black transition-all ${open ? "-rotate-45 -translate-y-2" : ""
             }`}
         ></span>
       </button>
