@@ -40,18 +40,18 @@ const Packages = () => {
 
     return (
         <section className='bg-[#E9E9E9] text-center px-4 py-14'>
-            <div className="max-w-7xl mx-auto">
+            <div className=" lg:max-w-4xl xl:max-w-7xl 2xl:max-w-360 mx-auto">
                 <div>
-                    <h1 className='text-5xl mb-2'>Our Packages</h1>
-                    <p className='text-lg font-bold'>Choose the package that best fits your needs</p>
+                    <h1 className='text-4xl md:text-7xl font-bold text-primary mb-3'>Our Packages</h1>
+                    <p className='text-xl font-bold'>Choose the package that best fits your needs</p>
                 </div>
                 <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
                     <button
                         type="button"
                         onClick={() => setSelected("choose")}
-                        className={`rounded-xl cursor-pointer px-4 py-2 font-semibold transition-all duration-200 ${selected === "choose"
-                            ? "bg-primary text-white text-xl shadow-md"
-                            : "bg-white text-primary text-lg hover:bg-primary/10"
+                        className={`rounded-lg cursor-pointer px-6 py-2.5 shadow-xl font-bold transition-all duration-200 ${selected === "choose"
+                            ? "bg-primary text-white text-2xl "
+                            : "bg-white text-primary text-xl  hover:bg-primary/10 "
                             }`}
                     >
                         Choose Package
@@ -59,9 +59,9 @@ const Packages = () => {
                     <button
                         type="button"
                         onClick={() => setSelected("custom")}
-                        className={`rounded-xl cursor-pointer px-4 py-2 font-semibold transition-all duration-200 ${selected === "custom"
-                            ? "bg-primary text-white text-xl shadow-md"
-                            : "bg-white text-primary text-lg hover:bg-primary/10"
+                        className={`rounded-lg cursor-pointer px-6 py-2.5 shadow-xl font-bold transition-all duration-200 ${selected === "custom"
+                            ? "bg-primary text-white text-2xl"
+                            : "bg-white text-primary text-xl  hover:bg-primary/10"
                             }`}
                     >
                         Customize Package

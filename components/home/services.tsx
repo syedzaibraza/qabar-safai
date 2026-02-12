@@ -37,52 +37,50 @@ const Services = () => {
     const bottomRow = services.slice(4);
 
     return (
-        <section className="px-4 py-10">
-            <div className="mx-auto max-w-6xl">
-                <h2 className="mb-12 text-center text-5xl">
-                    Our Services
-                </h2>
+        <section className="py-16 mx-auto lg:max-w-4xl xl:max-w-7xl 2xl:max-w-360">
+            <h2 className="md:text-7xl text-primary mb-6 text-center">
+                Our Services
+            </h2>
 
-                <div className="space-y-3.5">
-                    {/* Top row: 4 items spread out */}
-                    <div className="grid grid-cols-2 gap-10 place-items-center md:grid-cols-4 md:gap-12">
-                        {topRow.map((s, i) => (
-                            <div
-                                key={s.title}
-                                className="flex flex-col items-center gap-4"
-                            >
-                                <Image
-                                    src={s.image}
-                                    alt={s.title}
-                                    width={120}
-                                    height={120}
-                                />
-                                <h3 className="text-center text-xl font-semibold">
-                                    {s.title}
-                                </h3>
+            <div className="space-y-3.5">
+                {/* Top row: 4 items spread out */}
+                <div className="grid grid-cols-2 gap-10 place-items-center md:grid-cols-4 md:gap-12">
+                    {topRow.map((s, i) => (
+                        <div
+                            key={s.title}
+                            className="flex flex-col items-center gap-4"
+                        >
+                            <Image
+                                src={s.image}
+                                alt={s.title}
+                                width={140}
+                                height={140}
+                            />
+                            <div className="text-3xl font-bold">
+                                {s.title}
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
+                </div>
 
-                    {/* Bottom row: 3 items centered */}
-                    <div className="flex flex-wrap justify-evenly items-baseline gap-10 md:gap-12">
-                        {bottomRow.map((s) => (
-                            <div
-                                key={s.title}
-                                className="flex flex-col items-center gap-4"
-                            >
-                                <Image
-                                    src={s.image}
-                                    alt={s.title}
-                                    width={120}
-                                    height={120}
-                                />
-                                <h3 className="text-center text-xl font-semibold">
-                                    {s.title}
-                                </h3>
-                            </div>
-                        ))}
-                    </div>
+                {/* Bottom row: 3 items centered */}
+                <div className="flex flex-wrap justify-evenly items-baseline gap-10 md:gap-12">
+                    {bottomRow.map((s) => (
+                        <div
+                            key={s.title}
+                            className="flex flex-col items-center gap-4"
+                        >
+                            <Image
+                                src={s.image}
+                                alt={s.title}
+                                width={140}
+                                height={140}
+                            />
+                            <h3 className="text-3xl font-bold">
+                                {s.title}
+                            </h3>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

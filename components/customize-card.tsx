@@ -56,7 +56,7 @@ const CustomizeCard = () => {
     };
 
     return (
-        <div className="relative z-0 bg-background flex items-center gap-6 h-full flex-col justify-center rounded-3xl border-2 px-4 py-6 w-2xs text-left border-primary">
+        <div className="bg-background flex items-center gap-6 h-full flex-col justify-center rounded-3xl border-4 px-4 py-6 w-[320px] min-w-[320px] text-left border-primary">
             <div className="text-center w-full">
                 <h1 className="text-4xl text-center font-bold">Customize</h1>
                 <h1 className="text-4xl font-semibold">${price}</h1>
@@ -72,17 +72,14 @@ const CustomizeCard = () => {
                                 className="sr-only"
                             />
                             <div
-                                className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${subscriptionType === type
-                                    ? "border-primary bg-primary"
-                                    : "border-gray-300 bg-transparent"
-                                    }`}
+                                className={`w-4 h-4 rounded-full flex items-center justify-center bg-zinc-300`}
                             >
                                 {subscriptionType === type && (
-                                    <div className="w-2 h-2 rounded-full bg-white" />
+                                    <div className="size-2.5 rounded-full bg-primary" />
                                 )}
                             </div>
                             <span
-                                className={`text-sm font-bold transition-colors ${subscriptionType === type ? "text-primary" : "text-gray-400"
+                                className={`text-base font-bold transition-colors ${subscriptionType === type ? "text-primary" : "text-gray-400"
                                     }`}
                             >
                                 {subscriptionLabels[type]}
@@ -107,14 +104,11 @@ const CustomizeCard = () => {
                                 className="sr-only"
                             />
                             <div
-                                className={`w-4 h-4 rounded border-2 flex items-center justify-center transition-colors ${isChecked
-                                    ? "border-primary bg-primary"
-                                    : "border-gray-300 bg-transparent"
-                                    }`}
+                                className={`size-5 rounded flex items-center justify-center transition-colors bg-zinc-300`}
                             >
                                 {isChecked && (
                                     <svg
-                                        className="size-3 text-white"
+                                        className="size-4 text-primary"
                                         fill="none"
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
@@ -126,7 +120,8 @@ const CustomizeCard = () => {
                                     </svg>
                                 )}
                             </div>
-                            <span className={isChecked ? "text-primary" : "text-gray-600"}>
+                            <span className={`font-semibold text-xl transition-colors ${isChecked ? "text-primary" : "text-gray-600"
+                                }`}>
                                 {service.name}
                             </span>
                         </label>
@@ -136,7 +131,7 @@ const CustomizeCard = () => {
 
             <button
                 onClick={handleChoosePackage}
-                className="w-fit flex items-center justify-center rounded-xl cursor-pointer bg-primary text-white hover:bg-primary/90 px-6 py-1 text-md font-semibold transition-colors hover:shadow"
+                className="w-fit px-4 py-2 flex items-center justify-center rounded-xl cursor-pointer bg-primary text-white hover:bg-primary/90  text-lg font-semibold transition-colors hover:shadow-lg"
             >
                 Choose Package
             </button>
