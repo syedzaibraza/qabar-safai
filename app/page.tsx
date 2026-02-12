@@ -1,3 +1,4 @@
+import GraveLocator from "@/components/home/graveLocator";
 import Packages from "@/components/home/packages";
 import ResentWork from "@/components/home/resentWork";
 import Services from "@/components/home/services";
@@ -40,6 +41,8 @@ export default function Home() {
 
       <Services />
       <Packages />
+      <GraveLocator />
+      {/* <Locator /> */}
       <ResentWork />
       <WhyChosen />
       <Testimonials />
