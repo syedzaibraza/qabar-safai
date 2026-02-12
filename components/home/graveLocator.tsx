@@ -28,37 +28,6 @@ interface PlaceResult {
     vicinity?: string;
 }
 
-interface GoogleMaps {
-    maps: {
-        Map: new (element: HTMLElement, options?: { zoom?: number; center?: { lat: number; lng: number }; mapTypeId?: string }) => {
-            setCenter: (location: { lat: number; lng: number }) => void;
-            setZoom: (zoom: number) => void;
-            fitBounds: (bounds: unknown) => void;
-        };
-        Marker: new (options: { position: { lat: number; lng: number }; map: unknown; title: string; icon?: { url: string; scaledSize?: unknown }; animation?: unknown }) => {
-            setMap: (map: unknown | null) => void;
-        };
-        InfoWindow: new (options?: { content?: string }) => {
-            open: (map: unknown, marker: unknown) => void;
-            close: () => void;
-        };
-        event: { addListener: (instance: unknown, event: string, handler: () => void) => void };
-        LatLngBounds: new () => { extend: (latLng: { lat: number; lng: number }) => void };
-        Size: new (width: number, height: number) => unknown;
-        Animation: { DROP: unknown };
-        PlacesService: new (map: unknown) => {
-            getDetails: (request: { placeId: string; fields: string[] }, callback: (place: PlaceDetails | null, status: string) => void) => void;
-            nearbySearch: (request: { location: { lat: number; lng: number }; radius: number; type?: string; keyword?: string }, callback: (results: PlaceResult[] | null, status: string) => void) => void;
-            textSearch: (request: { query: string; location?: { lat: number; lng: number }; radius?: number }, callback: (results: PlaceResult[] | null, status: string) => void) => void;
-        };
-        geometry: {
-            spherical: {
-                computeDistanceBetween: (from: { lat: number; lng: number }, to: { lat: number; lng: number }, radius?: number) => number;
-            };
-        };
-    };
-}
-
 // Calculate distance between two coordinates in kilometers
 const calculateDistance = (lat1: number, lng1: number, lat2: number, lng2: number): number => {
     const R = 6371; // Earth's radius in kilometers
@@ -78,10 +47,14 @@ const GraveLocator = () => {
     const [mapError, setMapError] = useState<string | null>(null);
     const [isSearching, setIsSearching] = useState(false);
     const mapRef = useRef<HTMLDivElement>(null);
-    const mapInstanceRef = useRef<InstanceType<GoogleMaps["maps"]["Map"]> | null>(null);
-    const markersRef = useRef<InstanceType<GoogleMaps["maps"]["Marker"]>[]>([]);
-    const infoWindowRef = useRef<InstanceType<GoogleMaps["maps"]["InfoWindow"]> | null>(null);
-    const locationMarkerRef = useRef<InstanceType<GoogleMaps["maps"]["Marker"]> | null>(null);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const mapInstanceRef = useRef<any>(null);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const markersRef = useRef<any[]>([]);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const infoWindowRef = useRef<any>(null);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const locationMarkerRef = useRef<any>(null);
 
     const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
     const pakistanCenter = useMemo(() => ({ lat: 30.3753, lng: 69.3451 }), []);
@@ -244,7 +217,8 @@ const GraveLocator = () => {
 
         const bounds = new googleMaps.LatLngBounds();
         bounds.extend({ lat: location.lat, lng: location.lng });
-        const markers: InstanceType<GoogleMaps["maps"]["Marker"]>[] = [];
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const markers: any[] = [];
 
         graveyards.forEach((graveyard) => {
             const position = { lat: graveyard.lat, lng: graveyard.lng };
